@@ -1,0 +1,128 @@
+html {
+  background-color: black;
+  height: 100%;
+  display: inline-block;
+  margin: 0 auto;
+  background-size: 100% 100%;
+}
+
+.gallery-container {
+  display: grid;
+  grid-auto-rows: 20vh;
+
+  grid-gap: 5px;
+
+
+}
+
+.gallery-container>div {
+  background-color: rgb(2, 252, 15);
+  border: solid;
+  border-color: burlywood;
+  border-radius: 10px;
+  -moz-box-shadow: 0px 0px 14px #f1cf0b;
+  -webkit-box-shadow: 0px 0px 14px #f5ca0b;
+  box-shadow: 0px 0px 14px #e7d108;
+  overflow: hidden;
+  position: relative;
+
+}
+
+[class*="gallery-element"]::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(41, 41, 44, 0.6);
+  width: 100%;
+  height: 100%;
+  transition: 0.1s;
+  z-index: 1;
+}
+
+
+[class*="gallery-element"]:hover::before {
+  top: 50%;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+[class*="gallery-element"]:hover .gallery-img{
+  transform: scale(1.2);
+  transition: 0.3s;
+}
+
+.gallery-text {
+  position: absolute;
+  left: 50%;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  top: 0;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  transition: 0.1s;
+}
+
+[class*="gallery-element"]:hover .gallery-text {
+  top: 60%;
+  opacity: 1;
+
+
+}
+
+.gallery-element1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 1;
+  display: inline-block;
+  position: relative;
+
+}
+
+.gallery-element2 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+.gallery-element3 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 2;
+}
+
+.gallery-element4 {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row: 2;
+}
+
+.gallery-element5 {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column: 6;
+}
+
+.gallery-element6 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+
+.gallery-element7 {
+  grid-column-start: 2;
+  grid-column-end: 6;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+
+
+.yellow {
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ffff00, 0 0 80px #ffff00, 0 0 90px #ffff00, 0 0 100px #ffff00, 0 0 150px #ffff00;
+}
